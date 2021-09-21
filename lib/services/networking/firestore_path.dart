@@ -6,12 +6,6 @@ class FirestorePath{
   /// Path to a single conversation of a user, represented by a number.
   static String conversation(String uid,String number) => 'users/$uid/conversations/$number';
 
-  /// Path to a collection of groups of a user.
-  static String groups(String uid) => 'users/$uid/groups';
-
-  /// Path to a single group of a user, represented by a groupID.
-  static String group(String uid, String groupID) => 'users/$uid/groups/$groupID';
-
   /// Path to a collection of contacts of a user.
   static String contacts(String uid) => 'users/$uid/contacts';
 

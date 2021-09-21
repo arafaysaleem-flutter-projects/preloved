@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// Helpers
 import '../../helper/typedefs.dart';
 
 class FirestoreService {
@@ -59,7 +60,7 @@ class FirestoreService {
   Future<void> batchActon({
     required String path,
     required Map<String, dynamic> changes,
-    Query<JSON>? Function(Query<JSON> query)? queryBuilder,
+    QueryBuilder queryBuilder,
   }) async {
     final batchUpdate = FirebaseFirestore.instance.batch();
     debugPrint(path);
@@ -80,9 +81,9 @@ class FirestoreService {
   /// existing at the provided path and filtered using the queryBuilder.
   Stream<List<T>> collectionStream<T>({
     required String path,
-    required T Function(JSON? data, String documentID) builder,
-    Query<JSON>? Function(Query<JSON> query)? queryBuilder,
-    int Function(T lhs, T rhs)? sort,
+    required SnapshotBuilder<T> builder,
+    QueryBuilder queryBuilder,
+    Sorter<T> sort,
   }) {
     Query<JSON> query = FirebaseFirestore.instance.collection(path);
     if (queryBuilder != null) {
@@ -105,7 +106,7 @@ class FirestoreService {
   /// existing at the provided path.
   Stream<T> documentStream<T>({
     required String path,
-    required T Function(JSON? data, String documentID) builder,
+    required SnapshotBuilder<T> builder,
   }) {
     final DocumentReference<JSON> reference = FirebaseFirestore.instance.doc(path);
     final Stream<DocumentSnapshot<JSON>> snapshots = reference.snapshots();
