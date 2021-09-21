@@ -6,8 +6,8 @@ import 'app_fonts.dart';
 /// A utility class that holds themes for the app.
 /// This class has no constructor and all methods are `static`.
 @immutable
-class CustomTheme {
-  const CustomTheme._();
+class AppThemes {
+  const AppThemes._();
 
   /// The main starting theme for the app.
   ///

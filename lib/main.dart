@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 //Helper
-import 'helper/utils/custom_theme.dart';
+import 'helper/utils/app_themes.dart';
 
 //Routers
 import 'routes/app_router.dart';
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MRS',
-      theme: CustomTheme.mainTheme,
+      theme: AppThemes.mainTheme,
       initialRoute: AppRouter.initialRoute,
       onGenerateRoute: AppRouter.generateRoute,
       navigatorKey: AppRouter.navigatorKey,

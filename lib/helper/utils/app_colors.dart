@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// A utility class that holds constants for useful and commonly
-/// used values throughout the entire app.
+/// A utility class that holds constants for colors values used throughout the
+/// app.
 /// This class has no constructor and all variables are `static`.
 @immutable
 class AppColors {
