@@ -96,7 +96,7 @@ jobs:
       - name: Run build runner for codegen files
         run: flutter packages pub run build_runner build --delete-conflicting-outputs
       - name: Generate Splitted Release APKs
-        run: flutter build apk --target-platform android-arm,android-arm64 --split-per-abi --obfuscate --split-debug-info=./ez_tickets_app/debug_trace --dart-define=BASE_URL=${{ secrets.BASE_URL }}
+        run: flutter build apk --target-platform android-arm,android-arm64 --split-per-abi --obfuscate --split-debug-info=./preloved_app/debug_trace --dart-define=BASE_URL=${{ secrets.BASE_URL }}
       - name: Remove bundled APK
         run: rm build/app/outputs/flutter-apk/app.apk
       - name: Upload Built APKs Artifact
@@ -147,7 +147,7 @@ jobs:
         uses: mkrakowitzer/actions-googledrive@1
         with:
           upload-from: ./build/app/outputs/flutter-apk/
-          upload-to: APKS/ez_tickets_app/
+          upload-to: APKS/preloved_app/
           skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
           google-client-id: ${{ secrets.DRIVE_CLIENT_ID }}
           google-client-secret: ${{ secrets.DRIVE_CLIENT_SECRET }}
