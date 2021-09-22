@@ -2,17 +2,22 @@ import 'package:clock/clock.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
-//Helper
-import 'helper/utils/app_themes.dart';
-
-//Routers
-import 'routes/app_router.dart';
+import 'my_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   debugPrint = setDebugPrint;
-  runApp(const MyApp());
+  await SentryFlutter.init(
+        (options) => options
+      ..dsn = 'https://329ab88387bc413e96aa71749d8f7bb3@o1009394.ingest.sentry.io/5973519'
+      ..debug = kDebugMode
+      ..sendDefaultPii = true,
+    appRunner: () async {
+      runApp(const MyApp());
+    },
+  );
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -28,21 +33,4 @@ void setDebugPrint(String? message, {int? wrapWidth}) {
     msg,
     wrapWidth: wrapWidth,
   );
-}
-
-class MyApp extends StatelessWidget {
-
-  const MyApp();
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'MRS',
-      theme: AppThemes.mainTheme,
-      initialRoute: AppRouter.initialRoute,
-      onGenerateRoute: AppRouter.generateRoute,
-      navigatorKey: AppRouter.navigatorKey,
-    );
-  }
 }
