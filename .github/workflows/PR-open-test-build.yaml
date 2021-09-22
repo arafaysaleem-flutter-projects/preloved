@@ -1,7 +1,7 @@
 name: Test PR and Push
 on:
   pull_request:
-    branches: [release,dev,master, test/**]
+    branches: [release,develop,master, test/**]
 jobs:
   build:
     name: Test APK
