@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "318206546793",
+    "project_id": "preloved-bb5ab",
+    "storage_bucket": "preloved-bb5ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318206546793:android:d35d78e157157a2aea63f8",
+        "android_client_info": {
+          "package_name": "com.inceptrafay.preloved"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318206546793-gtbo92khn3icki5pnkatp369126nhc86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inceptrafay.preloved",
+            "certificate_hash": "209784dfe181165fc7496540a8a8c46e416eb6ce"
+          }
+        },
+        {
+          "client_id": "318206546793-agslq08h2nkmni0m1vua8omel911lr6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNlXVuwxT-7Sa7vxf79iiOooXLnNptxJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318206546793-agslq08h2nkmni0m1vua8omel911lr6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
