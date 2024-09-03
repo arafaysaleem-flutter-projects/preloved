@@ -75,12 +75,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download Keystore Artifact
-        uses: actions/download-artifact@v2.0.9
+        uses: actions/download-artifact@v4.1.7
         with:
           name: keystore-artifact #Must be same as upload artifact in previous job
           path: android #Download to android directory
       - name: Download Key Properties Artifact
-        uses: actions/download-artifact@v2.0.9
+        uses: actions/download-artifact@v4.1.7
         with:
           name: key-properties-artifact #Must be same as upload artifact in previous job
           path: android #Download to android directory
@@ -113,7 +113,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Built APKs Artifact
-        uses: actions/download-artifact@v2.0.9
+        uses: actions/download-artifact@v4.1.7
         with:
           name: built-apks-artifact #Must be same as upload artifact in previous job
           path: build/app/outputs/flutter-apk #download all apks to flutter-apk dir
@@ -139,7 +139,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Built APKs Artifact
-        uses: actions/download-artifact@v2.0.9
+        uses: actions/download-artifact@v4.1.7
         with:
           name: built-apks-artifact #Must be same as upload artifact in previous job
           path: build/app/outputs/flutter-apk #download all apks to flutter-apk dir
